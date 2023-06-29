@@ -1,0 +1,17 @@
+RedirectMatch 404 ^/include/?.*$
+RedirectMatch 404 ^/layout/?.*$
+ErrorDocument 404 /404.html
+
+Options -Indexes
+Options -Multiviews
+
+RewriteEngine On
+
+# (OPTIONAL) Remove trailing slash if it happens to be on the request
+# Exclude physical directories (which must end in a slash)
+RewriteRule %{REQUEST_FILENAME} !-d
+RewriteRule (.+)/$ /$1.html [R=301,L]
+
+# Rewrite request to corresponding ".html" file if it exists
+RewriteCond %{DOCUMENT_ROOT}/$1.html -f
+RewriteRule ^([^.]+)[/]?$ $1.html [L]

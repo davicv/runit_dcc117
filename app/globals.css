@@ -1,0 +1,156 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 255, 255, 255;
+  --background-end-rgb: 230, 230, 230;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  font-family: Montserrat, 'Segoe UI', Tahoma, Verdana, sans-serif;
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+
+table {
+  border: 1px solid #999;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  margin: 5px auto;
+}
+
+td, th {
+  padding: 2px 5px;
+  border-right: 1px solid #999;
+}
+
+table.TabelaBasica {
+  border: none;
+  margin-top: 12px;
+  margin-bottom: 12px;
+  border: 1px solid #ddd;
+}
+
+.TabelaBasica tr {
+  @apply shadow-lg;
+}
+
+.TabelaBasica td, .TabelaBasica th {
+  padding: 5px 10px;
+  border-right: 1px solid #999;
+}
+
+.TabelaBasica td:last-child, .TabelaBasica th:last-child {
+  border-right: none;
+}
+
+.TabelaBasica td:nth-child(1) {
+  text-align: center;
+}
+
+.TabelaBasica td:nth-child(2) {
+  text-align: center;
+}
+
+.TabelaBasica td:nth-child(3) {
+  text-align: right;
+}
+
+.ant-btn {
+  margin-right: 5px;
+  margin-top: 4px;
+  margin-bottom: 4px;
+}
+.ant-btn:last-child {
+  margin-right: none;
+}
+
+.ant-btn-primary {
+  @apply text-secondary bg-secondary-bg;
+}
+
+.ant-btn-primary:hover {
+  @apply text-secondary bg-secondary-bg !important;
+}
+
+.ant-btn-default:hover {
+  @apply border-secondary-bg !important;
+}
+
+.link {
+  color: #00f;
+}
+
+.link:hover {
+  color: #00f;
+  text-decoration: underline;
+}
+
+.iconLink {
+  @apply
+    inline-block rounded-full 
+    border border-gray-200 shadow-lg
+    text-center p-4
+    text-slate-600 bg-gray-200
+    hover:text-[#0082ff] hover:bg-gray-200/75;
+}
+
+.iconAction {
+  @apply
+    inline-block
+    text-center p-2
+    text-slate-600
+    hover:text-[#0082ff]
+    text-3xl;
+}
+
+.iconFloatRight {
+  @apply
+    absolute right-5  
+    inline-block
+    text-center p-4
+    text-slate-600
+    hover:text-[#0082ff];
+}
+
+
+.baseInput {
+  @apply w-fit flex items-center my-2 bg-gray-200 rounded-md;
+}
+
+.baseInput > * {
+  @apply mx-1;
+}
+
+.baseInput > *:first {
+  @apply ml-0;
+}
+
+.baseInput > *:last-child {
+  @apply mr-0;
+}
+
+.baseInput > label {
+  @apply text-xs text-center px-1;
+}
+
+.fichaInfo {
+  @apply min-w-[220px] max-w-[300px] w-full border border-gray-300 p-4 my-5 bg-secondary shadow-lg text-left
+    hover:bg-secondary/80;
+}
+
